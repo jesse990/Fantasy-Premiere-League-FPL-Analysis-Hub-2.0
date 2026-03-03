@@ -2,6 +2,7 @@
 
 A rebuilt Fantasy Premier League analytics dashboard, motivated by maintainability issues in the original version and the positive reception it received after sharing on Reddit. The volume of requests for the `.pbix` file made me realise the importance of clean organisation, proper documentation, and a pipeline others could actually follow.
 
+
 ---
 
 ## What Changed and Why
@@ -10,11 +11,11 @@ The original dashboard was built as a learning project. Early mistakes and bad h
 
 ### 1. Messy Power Query
 
-The original dashboard handled all transformation and loading within Power Query. Steps were inconsistently named, logic was hard to trace, and debugging required navigating a long chain of tightly coupled steps. This also caused long refresh times and occasional freezing despite the model not being particularly large. Much of this stemmed from the absence of global keys for players and teams across seasons.
+The original dashboard handled a lot of trasnformation and loading within Power Query. Steps were inconsistently named, logic was hard to trace, and debugging required navigating a long chain of tightly coupled steps. This also caused long refresh times and occasional freezing despite the model not being particularly large. Much of this stemmed from the absence of global keys for players and teams across seasons.
 
 ### 2. Player and Team IDs Breaking Between Seasons
 
-FPL rebuilds its internal player IDs every season. The original dashboard had no mechanism to handle this — my workaround was a series of complex joins that technically worked but were hard to follow and contributed to the performance issues mentioned above.
+FPL rebuilds its internal player IDs every season. My workaround was a series of complex joins that technically worked but were hard to follow and contributed to the performance issues mentioned above.
 
 ---
 
