@@ -22,13 +22,13 @@ FPL rebuilds its internal player IDs every season. The original dashboard had no
 
 ### Python Data Pipeline
 
-All heavy data extraction now happens in Python scripts rather than Power Query. Power Query is only responsible for reading CSV files and pulling small reference tables directly from the API. This separates concerns cleanly and makes each part independently maintainable.
+All data is now sourced directly from the api in python. Also intesive caluculations whcih were part of my player recomendation calcuatoins have also been moved to python which has improved loading times by over 80%
 
 ### Folder-Based Incremental Loading
 
 Each gameweek is saved as its own CSV file (`gw1.csv`, `gw2.csv` etc.) in a dedicated folder. Power BI reads the whole folder and appends automatically.
 
-Previously I merged each new gameweek into a single master file in Python before Power BI read it. This caused a painful incident where I accidentally ran the merge script twice and had to unpick duplicated data. The new approach also means I can update mid-gameweek rather than waiting for the full gameweek to finish — running the script simply overwrites the current gameweek file.
+Previously I merged each new gameweek into a single master file in Python before Power BI read it. This caused occasional painful incidents where I accidentally ran the merge script twice and had to sort out duplicated data. The new approach also means I can update mid gameweek rather than waiting for the full gameweek to finish, running the script simply overwrites the current gameweek file.
 
 ### Cross-Season Player Identity
 
