@@ -2,6 +2,9 @@
 
 A rebuilt Fantasy Premier League analytics dashboard, motivated by maintainability issues in the original version and the positive reception it received after sharing on Reddit. The volume of requests for the `.pbix` file made me realise the importance of clean organisation, proper documentation, and a pipeline others could actually follow.
 
+## Live Dashboard
+
+[View the live dashboard on Power BI](https://app.powerbi.com/view?r=eyJrIjoiY2I5MGI5ZTgtMjJjYS00NmMyLTk0NTQtMjY4ZjhhMDQyYTkxIiwidCI6ImQxMjA2OTQzLWJmY2MtNGM3NC04MmQ0LTA1ZTYzYTQzMzViZiJ9)
 ---
 
 ## Dashboard
